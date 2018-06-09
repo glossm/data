@@ -1,36 +1,36 @@
 code,topic_set,name,num_speakers,endangerment
-bak,1,Bashkir,100,0
-peh,1,Bonan,100,0
-bua,1,Buriat,100,0
-clw,1,Chulym,100,0
-chv,1,Chuvash,100,0
-dta,1,Daur,100,0
-dlg,1,Dolgan,100,0
-sce,1,Dongxiang,100,0
-yuy,1,East Yugur,100,0
-eve,1,Even,100,0
-evn,1,Evenki,100,0
-gag,1,Gagauz,100,0
-xal,1,Kalmyk,100,0
-kdr,1,Karaim,100,0
-kaz,1,Kazakh,100,0
-kjh,1,Khakas,100,0
-kir,1,Kirghiz,100,0
-jct,1,Krymchak,100,0
-mnc,1,Manchu,100,0
-mgt,1,Mongol,100,0
-gld,1,Nanai,100,0
-neg,1,Negidal,100,0
-orh,1,Oroqen,100,0
-slr,1,Salar,100,0
-cjs,1,Shor,100,0
-alt,1,Southern Altai,100,0
-tat,1,Tatar,100,0
-mjg,1,Tu,100,0
-tyv,1,Tuvinian,100,0
-ude,1,Udihe,100,0
-ulc,1,Ulch,100,0
-uum,1,Urum,100,0
-ybe,1,West Yugur,100,0
-sjo,1,Xibe,100,0
-sah,1,Yakut,100,0
+bak,ask,Bashkir,100,0
+peh,ask,Bonan,100,0
+bua,ask,Buriat,100,0
+clw,ask,Chulym,100,0
+chv,ask,Chuvash,100,0
+dta,ask,Daur,100,0
+dlg,ask,Dolgan,100,0
+sce,ask,Dongxiang,100,0
+yuy,ask,East Yugur,100,0
+eve,ask,Even,100,0
+evn,ask,Evenki,100,0
+gag,ask,Gagauz,100,0
+xal,ask,Kalmyk,100,0
+kdr,ask,Karaim,100,0
+kaz,ask,Kazakh,100,0
+kjh,ask,Khakas,100,0
+kir,ask,Kirghiz,100,0
+jct,ask,Krymchak,100,0
+mnc,ask,Manchu,100,0
+mgt,ask,Mongol,100,0
+gld,ask,Nanai,100,0
+neg,ask,Negidal,100,0
+orh,ask,Oroqen,100,0
+slr,ask,Salar,100,0
+cjs,ask,Shor,100,0
+alt,ask,Southern Altai,100,0
+tat,ask,Tatar,100,0
+mjg,ask,Tu,100,0
+tyv,ask,Tuvinian,100,0
+ude,ask,Udihe,100,0
+ulc,ask,Ulch,100,0
+uum,ask,Urum,100,0
+ybe,ask,West Yugur,100,0
+sjo,ask,Xibe,100,0
+sah,ask,Yakut,100,0

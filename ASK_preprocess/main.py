@@ -71,3 +71,5 @@ for sub_dir in wav_sub_dir:
 
 # Write results in a single csv file
 write_results(csv_dir, result_dict)
+
+import wav_to_mp3

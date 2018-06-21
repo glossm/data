@@ -18,17 +18,18 @@ def line_prepender(filename, line):
 
 
 def euckr_to_utf8(filename):
-    with open(filename, 'r+') as f:
-        content = f.read()
-        f.seek(0, 0)
+    try:
+        with open(filename, 'r+', encoding='euc-kr') as f:
+            content = f.read()
+    except UnicodeDecodeError:
         try:
-            f.write(unicode(content, 'euc-kr').encode('utf-8'))
-        except UnicodeDecodeError:
-            try:
-                f.write(unicode(content, 'cp949').encode('utf-8'))
-            except Exception as e:
-                print(e)
+            with open(filename, 'r+', encoding='cp949') as f:
+                content = f.read()
+        except Exception as e:
+            print(e)
 
+    with open(filename, 'w+', encoding='utf-8') as f:
+        f.write(content)
 
 def get_io_filenames(wav_file):
     i_file, i_type = os.path.splitext(wav_file)

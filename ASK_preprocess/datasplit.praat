@@ -27,7 +27,7 @@ for i from 1 to rows
     elsif i <= 999
        numbering$ = "0" + fixed$ (i,0)
     else
-       numbering$ = "0" + fixed$ (i,0)
+       numbering$ = fixed$ (i,0)
     endif
 
 	Rename: fixed$ (i,0)

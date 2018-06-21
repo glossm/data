@@ -1,3 +1,4 @@
+from collections import defaultdict
 from modules import *
 
 # Set current working directory (cwd)
@@ -12,9 +13,10 @@ wav_dir = os.path.join(cwd_dir, "raw", "wav")
 pre_dir = os.path.join(cwd_dir, "preprocessed")
 tag_dir = os.path.join(cwd_dir, "preprocessed", "tag")
 out_dir = os.path.join(cwd_dir, "preprocessed", "wav")
+csv_dir = os.path.join(cwd_dir, "preprocessed", "csv")
 
 # Make directory if not exists
-for directory in [raw_dir, sfl_dir, wav_dir, pre_dir, tag_dir, out_dir]:
+for directory in [raw_dir, sfl_dir, wav_dir, pre_dir, tag_dir, out_dir, csv_dir]:
     if os.path.isdir(directory) is False:
         os.mkdir(directory)
 
@@ -41,7 +43,7 @@ for sub_dir in sfl_sub_dir:
         convert_sfl_to_txt(i_dir, o_dir, file)
 
 # result_list will contain the names of all split files and their labels
-result_list = list()
+result_dict = defaultdict(list)
 
 # For all the subdirectories in the wav directory ...
 for sub_dir in wav_sub_dir:
@@ -65,7 +67,7 @@ for sub_dir in wav_sub_dir:
 
                 # ... and append the result list
                 label_list = get_label_list(t_file_full)
-                result_list += new_results(wav_file, label_list)
+                result_dict[sub_dir] += new_results(wav_file, label_list)
 
 # Write results in a single csv file
-write_results(cwd_dir, result_list)
+write_results(csv_dir, result_dict)

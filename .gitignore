@@ -2,3 +2,4 @@
 /ASK_preprocess/raw/*
 /ASK_preprocess/preprocessed/*
 /ASK_preprocess/results.csv
+*.pyc

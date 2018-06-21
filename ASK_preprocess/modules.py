@@ -92,9 +92,10 @@ def new_results(wav_file, label_list):
     return new_result_list
 
 
-def write_results(cwd_dir, result_list):
-    with open(os.path.join(cwd_dir, "results.csv"), "w") as file:
-        enumerated_list = [["Number", "InputFile", "OutputFile", "StartTime", "EndTime", "Label"],] \
-                          + [[i+1] + line for i, line in enumerate(result_list)]
-        writer = csv.writer(file)
-        writer.writerows(enumerated_list)
+def write_results(csv_dir, result_dict):
+    for k, v in result_dict.items():
+        with open(os.path.join(csv_dir, k + ".csv"), "w") as file:
+            enumerated_list = [["Number", "InputFile", "OutputFile", "StartTime", "EndTime", "Label"],] \
+                              + [[i+1] + line for i, line in enumerate(v)]
+            writer = csv.writer(file)
+            writer.writerows(enumerated_list)

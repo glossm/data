@@ -1,10 +1,10 @@
 from modules import *
-from pydub import AudioSegment
+from pydub.pydub import AudioSegment
 # import subprocess
 
 # Set current working directory (cwd)
 cwd_dir = os.getcwd()
-cwd_dir = "/Volumes/mkhdd/glossm-data"
+# cwd_dir = "/Volumes/mkhdd/glossm-data"
 
 # Set input (raw) and output (preprocessed) directories based on cwd
 pre_dir = os.path.join(cwd_dir, "preprocessed")

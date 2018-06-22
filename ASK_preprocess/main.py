@@ -3,7 +3,7 @@ from modules import *
 
 # Set current working directory (cwd)
 cwd_dir = os.getcwd()
-cwd_dir = "/Volumes/mkhdd/glossm-data"
+# cwd_dir = "/Volumes/mkhdd/glossm-data"
 
 # Set input (raw) and output (preprocessed) directories based on cwd
 raw_dir = os.path.join(cwd_dir, "raw")

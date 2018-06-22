@@ -1,0 +1,21 @@
+topic_set,code,name,num_speakers,endangerment
+ar3,bak3,Bashkir (Advanced),1150000,4
+ar3,bua3,Buriat (Advanced),329100,5
+ar3,clw3,Chulym (Advanced),44,8b
+ar3,dta3,Daur (Advanced),96100,7
+ar3,dlg3,Dolgan (Advanced),1050,6b
+ar2,bak2,Bashkir (Intermediate),1150000,4
+ar2,bua2,Buriat (Intermediate),329100,5
+ar2,clw2,Chulym (Intermediate),44,8b
+ar2,dta2,Daur (Intermediate),96100,7
+ar2,dlg2,Dolgan (Intermediate),1050,6b
+ar1,bak1,Bashkir (Beginner),1150000,4
+ar1,bua1,Buriat (Beginner),329100,5
+ar1,clw1,Chulym (Beginner),44,8b
+ar1,dta1,Daur (Beginner),96100,7
+ar1,dlg1,Dolgan (Beginner),1050,6b
+ask,dlg,Dolgan,1050,6b
+ask,dta,Daur,96100,7
+ask,clw,Chulym,44,8b
+ask,bua,Buriat,329100,5
+ask,bak,Bashkir,1150000,4

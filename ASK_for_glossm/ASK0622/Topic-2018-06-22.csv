@@ -1,0 +1,97 @@
+topic_set,code,name,level
+ar3,va3,Astronomy (Advanced),1
+ar3,vw3,Weather (Advanced),2
+ar3,vy3,Seasons (Advanced),3
+ar3,vr3,Relations (Advanced),4
+ar3,vc3,Culture (Advanced),5
+ar3,vt3,Transportation (Advanced),6
+ar3,vb3,Body parts (Advanced),7
+ar3,vz3,Disease (Advanced),8
+ar3,vl3,Life (Advanced),9
+ar3,vg3,Garment (Advanced),10
+ar3,vf3,Food (Advanced),11
+ar3,vh3,Hunting (Advanced),12
+ar3,vk3,Livestock (Advanced),13
+ar3,vo3,Birds (Advanced),14
+ar3,vi3,Fish (Advanced),15
+ar3,ve3,Bugs (Advanced),16
+ar3,vv3,Plants (Advanced),17
+ar3,vj3,Jewelery (Advanced),18
+ar3,vd3,Directions (Advanced),19
+ar3,vq3,Numbers (Advanced),20
+ar3,vp3,Pronouns (Advanced),21
+ar3,vn3,Adjectives (Advanced),22
+ar3,vm3,Motions (Advanced),23
+ar3,vs3,Miscellaneous (Advanced),24
+ar2,va2,Astronomy (Interemediate),1
+ar2,vw2,Weather (Interemediate),2
+ar2,vy2,Seasons (Interemediate),3
+ar2,vr2,Relations (Interemediate),4
+ar2,vc2,Culture (Interemediate),5
+ar2,vt2,Transportation (Interemediate),6
+ar2,vb2,Body parts (Interemediate),7
+ar2,vz2,Disease (Interemediate),8
+ar2,vl2,Life (Interemediate),9
+ar2,vg2,Garment (Interemediate),10
+ar2,vf2,Food (Interemediate),11
+ar2,vh2,Hunting (Interemediate),12
+ar2,vk2,Livestock (Interemediate),13
+ar2,vo2,Birds (Interemediate),14
+ar2,vi2,Fish (Interemediate),15
+ar2,ve2,Bugs (Interemediate),16
+ar2,vv2,Plants (Interemediate),17
+ar2,vj2,Jewelery (Interemediate),18
+ar2,vd2,Directions (Interemediate),19
+ar2,vq2,Numbers (Interemediate),20
+ar2,vp2,Pronouns (Interemediate),21
+ar2,vn2,Adjectives (Interemediate),22
+ar2,vm2,Motions (Interemediate),23
+ar2,vs2,Miscellaneous (Interemediate),24
+ar1,va1,Astronomy (Beginner),1
+ar1,vw1,Weather (Beginner),2
+ar1,vy1,Seasons (Beginner),3
+ar1,vr1,Relations (Beginner),4
+ar1,vc1,Culture (Beginner),5
+ar1,vt1,Transportation (Beginner),6
+ar1,vb1,Body parts (Beginner),7
+ar1,vz1,Disease (Beginner),8
+ar1,vl1,Life (Beginner),9
+ar1,vg1,Garment (Beginner),10
+ar1,vf1,Food (Beginner),11
+ar1,vh1,Hunting (Beginner),12
+ar1,vk1,Livestock (Beginner),13
+ar1,vo1,Birds (Beginner),14
+ar1,vi1,Fish (Beginner),15
+ar1,ve1,Bugs (Beginner),16
+ar1,vv1,Plants (Beginner),17
+ar1,vj1,Jewelery (Beginner),18
+ar1,vd1,Directions (Beginner),19
+ar1,vq1,Numbers (Beginner),20
+ar1,vp1,Pronouns (Beginner),21
+ar1,vn1,Adjectives (Beginner),22
+ar1,vm1,Motions (Beginner),23
+ar1,vs1,Miscellaneous (Beginner),24
+ask,va,Astronomy,1
+ask,vw,Weather,2
+ask,vy,Seasons,3
+ask,vr,Relations,4
+ask,vc,Culture,5
+ask,vt,Transportation,6
+ask,vb,Body parts,7
+ask,vz,Disease,8
+ask,vl,Life,9
+ask,vg,Garment,10
+ask,vf,Food,11
+ask,vh,Hunting,12
+ask,vk,Livestock,13
+ask,vo,Birds,14
+ask,vi,Fish,15
+ask,ve,Bugs,16
+ask,vv,Plants,17
+ask,vj,Jewelery,18
+ask,vd,Directions,19
+ask,vq,Numbers,20
+ask,vp,Pronouns,21
+ask,vn,Adjectives,22
+ask,vm,Motions,23
+ask,vs,Miscellaneous,24

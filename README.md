@@ -30,7 +30,7 @@ Run `make` in the `ASK_preprocess/sfl2txt-current` to install sfl2txt locally.
 brew install ffmpeg
 ```
 
-4. Install [pydub](https://sourceforge.net/projects/sfltxtconverter/) locally.
+4. Install [pydub](http://pydub.com/) locally.
 
 ```
 git clone https://github.com/jiaaro/pydub.git

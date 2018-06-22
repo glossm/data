@@ -1,72 +1,75 @@
-import os, subprocess
+from collections import defaultdict
+from modules import *
 
+# Set current working directory (cwd)
 cwd_dir = os.getcwd()
-cwd_dir = "/Volumes/mkhdd/glossm-data"
+# cwd_dir = "/Volumes/mkhdd/glossm-data"
 
+# Set input (raw) and output (preprocessed) directories based on cwd
 raw_dir = os.path.join(cwd_dir, "raw")
-tag_dir = os.path.join(cwd_dir, "tag")
-out_dir = os.path.join(cwd_dir, "out")
+sfl_dir = os.path.join(cwd_dir, "raw", "sfl")
+wav_dir = os.path.join(cwd_dir, "raw", "wav")
 
-sfl_dir = os.path.join(raw_dir, "sfl")
-wav_dir = os.path.join(raw_dir, "wav")
+pre_dir = os.path.join(cwd_dir, "preprocessed")
+tag_dir = os.path.join(cwd_dir, "preprocessed", "tag")
+out_dir = os.path.join(cwd_dir, "preprocessed", "wav")
+csv_dir = os.path.join(cwd_dir, "preprocessed", "csv")
 
-for directory in [raw_dir, sfl_dir, wav_dir, tag_dir, out_dir]:
+# Make directory if not exists
+for directory in [raw_dir, sfl_dir, wav_dir, pre_dir, tag_dir, out_dir, csv_dir]:
     if os.path.isdir(directory) is False:
         os.mkdir(directory)
 
-sfl_sub_dir = [sub_dir for sub_dir in os.listdir(sfl_dir) if sub_dir.startswith('.') is False]
-wav_sub_dir = [sub_dir for sub_dir in os.listdir(wav_dir) if sub_dir.startswith('.') is False]
+# Get subdirectories of input files
+sfl_sub_dir = get_subdirectories(sfl_dir)
+wav_sub_dir = get_subdirectories(wav_dir)
 
+# Make subdirectories of output files
 tag_sub_dir = [os.path.join(tag_dir, sub_dir) for sub_dir in sfl_sub_dir]
+out_sub_dir = [os.path.join(out_dir, sub_dir) for sub_dir in sfl_sub_dir]
 
+for directory in tag_sub_dir + out_sub_dir:
+    if os.path.isdir(directory) is False:
+        os.mkdir(directory)
+
+# For all the subdirectories in the sfl directory ...
 for sub_dir in sfl_sub_dir:
-    input_dir = os.path.join(sfl_dir, sub_dir)
-    output_dir = os.path.join(tag_dir, sub_dir)
+    i_dir = os.path.join(sfl_dir, sub_dir)
+    o_dir = os.path.join(tag_dir, sub_dir)
 
-    if os.path.isdir(output_dir) is False:
-        os.mkdir(output_dir)
+    # ... convert sfl files to txt files
+    for file in get_subdirectories(i_dir, 'sfl'):
+        print("Converting %s to txt ..." % (file))
+        convert_sfl_to_txt(i_dir, o_dir, file)
 
-    sfl_files = [file for file in os.listdir(input_dir) if file.startswith('.') is False]
+# result_list will contain the names of all split files and their labels
+result_dict = defaultdict(list)
 
-    for file in sfl_files:
-        input_file = os.path.join(input_dir, file)
-        output_file = os.path.join(output_dir, file).rstrip('sfl') + 'txt'
-        if 'Bashkir' in file:
-            sample_rate = '44100'
-        elif 'Buryat' in file:
-            sample_rate = '48000'
-        else:
-            sample_rate = '44100'
-        print(file, sample_rate)
-        subprocess.call(['./sfl2txt-current/sfl2txt', '-i', input_file, '-o', output_file, '-r', sample_rate])
-
-
+# For all the subdirectories in the wav directory ...
 for sub_dir in wav_sub_dir:
-    i_dir = os.path.join(wav_dir, sub_dir)
-    o_dir = os.path.join(out_dir, sub_dir)
-
-    if os.path.isdir(o_dir) is False:
-        os.mkdir(o_dir)
-
-    wav_files = [file for file in os.listdir(i_dir) if file.startswith('.') is False]
-
-    if sub_dir in os.listdir(tag_dir):
+    if sub_dir in get_subdirectories(tag_dir):
+        i_dir = os.path.join(wav_dir, sub_dir)
+        o_dir = os.path.join(out_dir, sub_dir)
         t_dir = os.path.join(tag_dir, sub_dir)
-        tag_files = [file for file in os.listdir(t_dir) if file.startswith('.') is False]
 
-        for file in sorted(wav_files):
-            i_file, i_type = os.path.splitext(file)
+        # ... and for all the wav files in the subdirectory ...
+        for wav_file in get_subdirectories(i_dir, 'wav'):
+            i_file, i_type, o_prefix, o_type = get_io_filenames(wav_file)
 
-            for tag in tag_files:
-                if tag.startswith(i_file) and 'Bashkir' in tag:
-                    o_file = i_file
-                    o_type = i_type.lower()
+            # ... find matching txt files ...
+            for tag_file in [item for item in get_subdirectories(t_dir) if item.startswith(i_file)]:
+                i_file_full = os.path.join(i_dir, wav_file)
+                t_file_full = os.path.join(t_dir, tag_file)
 
-                    t_file, t_type = os.path.splitext(tag)
+                # ... and split the wav files using Praat
+                print("Splitting %s ..." % wav_file)
+                praat_split_wav(i_file_full, t_file_full, o_dir, o_prefix, o_type)
 
-                    print("Splitting %s ..." % i_file + i_type)
+                # ... and append the result list
+                label_list = get_label_list(t_file_full)
+                result_dict[sub_dir] += new_results(wav_file, label_list)
 
-                    i_file_full = os.path.join(i_dir, file)
-                    t_file_full = os.path.join(t_dir, t_file+t_type)
-                    arguments = [i_file_full, o_dir, o_file, o_type, t_file_full]
-                    subprocess.call(['praat', '--run', 'datasplit.praat'] + arguments)
+# Write results in a single csv file
+write_results(csv_dir, result_dict)
+
+import wav_to_mp3

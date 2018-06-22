@@ -12,15 +12,29 @@ Preliminary data for Glossm. Please import `csv` files in `ASK_for_glossm/` by f
 
 ### Installation
 
-You need to install [Praat](http://www.fon.hum.uva.nl/praat/) and [sfl2txt](https://sourceforge.net/projects/sfltxtconverter/) before running.
+1. Install [Praat](http://www.fon.hum.uva.nl/praat/).
 
-Please add the following line in `~/.bash_profile` or `~/.bashrc`  (see [here](https://github.com/JoFrhwld/FAVE/wiki/Praat-on-OS-X) for further details)
+Add the following line in `~/.bash_profile` (see [here](https://github.com/JoFrhwld/FAVE/wiki/Praat-on-OS-X) for further details)
 
 ```
 export PATH=$PATH:/Applications/Praat.app/Contents/MacOS
 ```
 
+2. Intall [sfl2txt](https://sourceforge.net/projects/sfltxtconverter/).
+
 Run `make` in the `ASK_preprocess/sfl2txt-current` to install sfl2txt locally.
+
+3. Install [ffmpeg](http://www.ffmpeg.org).
+
+```
+brew install ffmpeg
+```
+
+4. Install [pydub](http://pydub.com/) locally.
+
+```
+git clone https://github.com/jiaaro/pydub.git
+```
 
 ### File directory convention
 

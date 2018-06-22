@@ -1,6 +1,6 @@
 topic_set,code,name,level
-ask,vs,Phrases,24
-ask,vm,Miscellaneous,23
+ask,vs,Miscellaneous,24
+ask,vm,Motions,23
 ask,vn,Adjectives,22
 ask,vp,Pronouns,21
 ask,vq,Numbers,20
@@ -19,7 +19,7 @@ ask,vz,Disease,8
 ask,vb,Body parts,7
 ask,vt,Transportation,6
 ask,vc,Culture,5
-ask,vr,Relation,4
+ask,vr,Relations,4
 ask,vy,Seasons,3
 ask,vw,Weather,2
 ask,va,Astronomy,1

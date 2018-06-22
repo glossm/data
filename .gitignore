@@ -1,2 +1,8 @@
 */.idea/*
 /ASK_preprocess/raw/*
+/ASK_preprocess/preprocessed/*
+/ASK_preprocess/results.csv
+*.pyc
+
+/ASK_preprocess/sfl2txt-current/*
+/ASK_preprocess/pydub/*

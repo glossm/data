@@ -1,4 +1,6 @@
-from modules import *
+import os
+
+from modules import get_subdirectories
 from pydub.pydub import AudioSegment
 # import subprocess
 
